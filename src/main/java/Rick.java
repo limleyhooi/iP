@@ -25,6 +25,7 @@ public class Rick {
         while (true) {
             System.out.print(">");
             String input = s.nextLine(); //enter string element;
+            input = input.replaceAll("\\s","");//remove all spaces in user input.
 
 
             if (input.equalsIgnoreCase("bye")) {
@@ -44,8 +45,8 @@ public class Rick {
                 }
                 continue;
             }
-            if(input.startsWith("mark ")){
-                int taskIndex = Integer.parseInt(input.substring(5))-1; //finding the index to mark;
+            if(input.startsWith("mark")){
+                int taskIndex = Integer.parseInt(input.substring(4))-1; //finding the index to mark;
                 if (taskIndex >= 0 && taskIndex < i) {
                     tasks[taskIndex].markAsDone();
                     printDivider();
@@ -57,8 +58,8 @@ public class Rick {
                 }
                 continue;
             }
-            if(input.startsWith("unmark ")){
-                int taskIndex = Integer.parseInt(input.substring(7))-1;
+            if(input.startsWith("unmark")){
+                int taskIndex = Integer.parseInt(input.substring(6))-1;
                 if (taskIndex >= 0 && taskIndex < i) {
                     tasks[taskIndex].markAsUndone();
                     printDivider();
@@ -71,14 +72,11 @@ public class Rick {
                 continue;
             }
             if(input.startsWith("todo")){
-                System.out.println("Got it, added to task:");
-                String inputTodo = input.substring(5);
-                tasks[i] = new Todo(inputTodo);
+                input = input.substring(4);
+                tasks[i] = new Todo(input);
             }
             if(input.startsWith("deadline")){
-                System.out.println("Got it, added to task:");
-                int firstSpace = input.indexOf(" ");
-                String modifiedInput = input.substring(firstSpace+1);//remove the word deadline;
+                String modifiedInput = input.substring(8);//remove the word deadline;
                 String[] part = modifiedInput.split("/by",2); //split modified string to description and date;
                 String Deadline_description = part[0].trim();
                 String Deadline_date = part[1].trim();
@@ -87,9 +85,7 @@ public class Rick {
 
             }
             if(input.startsWith("event")){
-                System.out.println("Got it, added to task:");
-                int firstSpace = input.indexOf(" ");
-                String modifiedInput = input.substring(firstSpace+1);
+                String modifiedInput = input.substring(5);
                 String[] part = modifiedInput.split("/from|/to", 3);
                 String description = part[0].trim();
                 String time1 = part[1].trim();
@@ -99,18 +95,10 @@ public class Rick {
 
 
             }
-
+            System.out.println("Got it, added to task:");
             System.out.println(tasks[i]);
             System.out.println("Now you have "+ String.valueOf(i + 1)+ " tasks in list");
             i++;
-
-
-
-
-
-
-
-
 
 
         }
