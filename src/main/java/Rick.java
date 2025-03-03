@@ -16,7 +16,7 @@ public class Rick {
                         "|_| \\_\\_|\\___|_|\\_\\";
         System.out.println("Hello from\n" + logo);
         System.out.println("""
-                Hello, I'm rick
+                Hello, I'm rick (´｡• ᵕ •｡`)
                 What can I do for you?
                 """);
         Scanner s = new Scanner(System.in);
@@ -30,14 +30,14 @@ public class Rick {
 
 
             if (input.startsWith("bye")) {
-                System.out.println("bye bye! Hope to see you soon ^-^ ");
+                System.out.println("bye bye! Hope to see you soon (づ￣ ³￣)づ");
                 break;
             }
             if (input.startsWith("list")){
                 if (i ==0) {
-                    System.out.println(" No tasks added."); //tasks array is empty
+                    System.out.println(" No tasks added (;ↀ⌓ↀ)"); //tasks array is empty
                 } else {
-                    System.out.println("Here are the items in your list:");
+                    System.out.println("Here are the items in your list ᕦ(ò_óˇ)ᕤ :");
                     for (int j = 0; j < i; j++) {
                         System.out.print(j + 1+"."); //iterate through tasks array;
                         System.out.println(tasks[j]);
@@ -47,28 +47,38 @@ public class Rick {
                 continue;
             }
             if(input.startsWith("mark")){
-                int taskIndex = Integer.parseInt(input.substring(4))-1; //finding the index to mark;
-                if (taskIndex >= 0 && taskIndex < i) {
-                    tasks[taskIndex].markAsDone();
-                    printDivider();
-                    System.out.println(" Nice! I've marked this task as done:");
-                    System.out.println(tasks[taskIndex]);
-                    printDivider();
-                } else {
-                    System.out.println("Invalid task number!");
+                int taskIndex = 0;//declare and initialise outside try-catch block;
+                try {
+                    taskIndex = Integer.parseInt(input.substring(4)) - 1; //finding the index to mark;
+                    if (taskIndex >= 0 && taskIndex < i) {
+                        tasks[taskIndex].markAsDone();
+                        printDivider();
+                        System.out.println(" Nicee! I've marked this task as done ᕕ( ᐛ )ᕗ :");
+                        System.out.println(tasks[taskIndex]);
+                        printDivider();
+                    } else {
+                        System.out.println("Invalid task number!");
+                    }
+                }catch(NumberFormatException e){
+                    System.out.println("only a number after mark! O_o");
                 }
                 continue;
             }
             if(input.startsWith("unmark")){
-                int taskIndex = Integer.parseInt(input.substring(6))-1;
-                if (taskIndex >= 0 && taskIndex < i) {
-                    tasks[taskIndex].markAsUndone();
-                    printDivider();
-                    System.out.println(" Nice! I've marked this task as done:");
-                    System.out.println(tasks[taskIndex]);
-                    printDivider();
-                } else {
-                    System.out.println("Invalid task number!");
+                int taskIndex = 0;
+                try {
+                    taskIndex = Integer.parseInt(input.substring(6)) - 1;
+                    if (taskIndex >= 0 && taskIndex < i) {
+                        tasks[taskIndex].markAsUndone();
+                        printDivider();
+                        System.out.println(" Gotcha! I've unmarked this task (≧▽≦)");
+                        System.out.println(tasks[taskIndex]);
+                        printDivider();
+                    } else {
+                        System.out.println("Invalid task number!");
+                    }
+                }catch(NumberFormatException e){
+                    System.out.println("only a number after unmark! o_O");
                 }
                 continue;
             }
@@ -78,7 +88,7 @@ public class Rick {
                 if(input.isEmpty()){
                     throw new RickException();
                 }}catch(RickException e){
-                    System.out.println("Add your description for todo! ಠ益ಠ");
+                    System.out.println("Your todo task needs a description with keyword: todo"+ System.lineSeparator()+"E.g. todo borrow books");
                     continue;
                 }
                 tasks[i] = new Todo(input);
@@ -89,7 +99,7 @@ public class Rick {
                 if(modifiedInput.isEmpty()){
                     throw new RickException();
                 }}catch(RickException e){
-                System.out.println("WHERE IS THE DESCRIPTION FOR DEADLINE?! (╯°□°）╯︵ ┻━┻ ");
+                System.out.println("Your deadline task needs a description with keywords: deadline, /by" + System.lineSeparator()+" E.g. deadline return book /by sunday ");
                 continue;
             }
                 String[] part = modifiedInput.split("/by",2); //split modified string to description and date;
@@ -105,7 +115,7 @@ public class Rick {
                     if(modifiedInput.isEmpty()){
                         throw new RickException();
                     }}catch(RickException e) {
-                    System.out.println("No description for event? Brilliant! ಠ_ಠ");
+                    System.out.println(" Your event task needs a description with keywords: event, /from & /to" +System.lineSeparator()+"E.g. event project meeting /from Mon 2pm /to 4pm ");
                     continue;
                 }
                 String[] part = modifiedInput.split("/from|/to", 3);
@@ -117,10 +127,14 @@ public class Rick {
 
 
             }
+            if(tasks[i] ==null){
+                System.out.println("sorry pal, not a recognized command ಸ‿ಸ ");
+                continue;
+            }
 
             System.out.println("Okie doki, added to task! ʕ•ᴥ•ʔ ");
             System.out.println(tasks[i]);
-            System.out.println("Now you have "+ String.valueOf(i + 1)+ " tasks in list ✿");
+            System.out.println("Now you have "+ String.valueOf(i + 1)+ " tasks in list ᕙ(⇀‸↼‶)ᕗ");
             i++;
 
 
