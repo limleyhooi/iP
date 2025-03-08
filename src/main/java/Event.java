@@ -11,4 +11,9 @@ public class Event extends Task{
     public String toString(){
         return "[E]" + super.toString() + " (from: " + time1 + " to: " + time2 + ")";
     }
+    @Override
+    public String toDataString() {
+        // Format: E | 1/0 | description | time1 | time2
+        return "E | " + (isDone ? "1" : "0") + " | " + this.description + " | " + this.time1 + " | " + this.time2;
+    }
 }

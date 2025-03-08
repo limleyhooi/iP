@@ -6,4 +6,9 @@ public class Todo extends Task{
     public String toString(){
         return "[T]" + super.toString();
     }
+    @Override
+    public String toDataString() {
+        // Format: T | 1/0 | description
+        return "T | " + (isDone ? "1" : "0") + " | " + this.description;
+    }
 }
