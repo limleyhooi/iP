@@ -20,9 +20,14 @@ public class Rick {
                 Hello, I'm rick (´｡• ᵕ •｡`)
                 What can I do for you?
                 """);
+
+        Storage storage = new Storage();
+        ArrayList<Task> tasks = storage.loadTasks();
+        int i = tasks.size();
+
         Scanner s = new Scanner(System.in);
-        ArrayList<Task> tasks = new ArrayList<>();
-        int i = 0;
+
+
 
 
         while (true) {
@@ -60,6 +65,8 @@ public class Rick {
                         System.out.println(" Nicee! I've marked this task as done ᕕ( ᐛ )ᕗ :");
                         System.out.println(tasks.get(taskIndex));
                         printDivider();
+                        storage.saveTasks(tasks);
+
                     } else {
                         System.out.println("Invalid task number!");
                     }
@@ -78,6 +85,8 @@ public class Rick {
                         System.out.println(" Gotcha! I've unmarked this task (≧▽≦)");
                         System.out.println(tasks.get(taskIndex));
                         printDivider();
+                        storage.saveTasks(tasks);
+
                     } else {
                         System.out.println("Invalid task number!");
                     }
@@ -96,6 +105,8 @@ public class Rick {
                     continue;
                 }
                 tasks.add(new Todo(input));
+                storage.saveTasks(tasks);
+
             }
             if(input.startsWith("deadline")){
                 String modifiedInput = input.substring(8);//remove the word deadline;
@@ -115,6 +126,8 @@ public class Rick {
                 String Deadline_description = part[0].trim();
                 String Deadline_date = part[1].trim();
                 tasks.add(new Deadline(Deadline_description,Deadline_date));
+                storage.saveTasks(tasks);
+
 
 
             }
@@ -140,6 +153,8 @@ public class Rick {
                 String time2 = part[2].trim();
                 int eventIndex = i + 1;
                 tasks.add(new Event(description, time1, time2));
+                storage.saveTasks(tasks);
+
 
             }
             if(input.startsWith("delete")) {
@@ -160,7 +175,15 @@ public class Rick {
                     System.out.print("Enter a number!");
                     continue;
                 }
+                storage.saveTasks(tasks);
                 System.out.println("okie deleted!");
+                int arrayIndex = 0;
+                for (Task task :tasks) {
+                    System.out.print(arrayIndex + 1+"."); //iterate through tasks array;
+                    System.out.println(task.toString());
+                    arrayIndex++;
+
+                }
                 continue;
             }
 
