@@ -30,7 +30,7 @@ public class Parser {
                 task.markAsDone();
                 ui.showTaskDone(task);
                 storage.saveTasks(taskList.getTasks());
-            } catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
+            } catch (NumberFormatException | IndexOutOfBoundsException e) {
                 ui.showError("Invalid task number for marking!");
             }
         } else if (trimmedInput.startsWith("unmark")) {
@@ -41,7 +41,7 @@ public class Parser {
                 task.markAsUndone();
                 ui.showTaskUndone(task);
                 storage.saveTasks(taskList.getTasks());
-            } catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
+            } catch (NumberFormatException |  IndexOutOfBoundsException e) {
                 ui.showError("Invalid task number for unmarking!");
             }
         } else if (trimmedInput.startsWith("delete")) {
