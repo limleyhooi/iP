@@ -27,10 +27,7 @@ public class Storage {
         }
     }
 
-    /**
-     * Loads tasks from the file (duke.txt).
-     * @return An ArrayList of tasks read from the file.
-     */
+
     public ArrayList<Task> loadTasks() {
         ArrayList<Task> tasks = new ArrayList<>();
         try (Scanner fileScanner = new Scanner(dataFile)) {
@@ -76,10 +73,7 @@ public class Storage {
         return tasks;
     }
 
-    /**
-     * Saves the current tasks to the file (duke.txt).
-     * @param tasks The list of tasks to be saved.
-     */
+
     public void saveTasks(ArrayList<Task> tasks) {
         try (PrintWriter writer = new PrintWriter(new FileWriter(dataFile))) {
             for (Task task : tasks) {
