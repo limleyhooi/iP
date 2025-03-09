@@ -1,14 +1,8 @@
+import java.util.ArrayList;
+
 public class Parser {
 
-    /**
-     * Parses and executes the user command.
-     *
-     * @param input The full user input.
-     * @param taskList The TaskList instance.
-     * @param storage The Storage instance.
-     * @param ui The Ui instance.
-     * @return true if the command is "bye" (to exit), false otherwise.
-     */
+
     public static boolean parse(String input, TaskList taskList, Storage storage, Ui ui) {
         String trimmedInput = input.trim();
 
@@ -17,7 +11,18 @@ public class Parser {
             return true; // signal to exit the program
         } else if (trimmedInput.equals("list")) {
             ui.showTaskList(taskList.getTasks());
-        } else if (trimmedInput.startsWith("mark")) {
+        }
+        else if (trimmedInput.startsWith("find")) { // NEW: find command
+            String keyword = trimmedInput.substring(4).trim();
+            if (keyword.isEmpty()) {
+                ui.showError("The search keyword cannot be empty.");
+            } else {
+                // Use TaskList's findTasks method to search for tasks containing the keyword
+                ArrayList<Task> foundTasks = taskList.findTasks(keyword);
+                ui.showFoundTasks(foundTasks);
+            }
+        }
+        else if (trimmedInput.startsWith("mark")) {
             try {
                 String noSpace = trimmedInput.replaceAll("\\s","");
                 int index = Integer.parseInt(noSpace.substring(4)) - 1;

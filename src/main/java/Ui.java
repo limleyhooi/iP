@@ -82,5 +82,18 @@ public class Ui {
         }
         showDivider();
     }
+    public void showFoundTasks(ArrayList<Task> tasks) {
+        if (tasks.isEmpty()) {
+            System.out.println("No matching tasks found.");
+        } else {
+            System.out.println("Here are the matching tasks in your list:");
+            int index = 1;
+            for (Task task : tasks) {
+                System.out.println(index + ". " + task);
+                index++;
+            }
+        }
+        showDivider();
+    }
 }
 
