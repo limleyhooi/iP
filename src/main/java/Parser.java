@@ -51,7 +51,7 @@ public class Parser {
                 taskList.deleteTask(index);
                 ui.showTaskDeleted();
                 storage.saveTasks(taskList.getTasks());
-            } catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
+            } catch (NumberFormatException | IndexOutOfBoundsException e) {
                 ui.showError("Invalid task number for deletion!");
             }
         } else if (trimmedInput.startsWith("todo")) {
