@@ -1,19 +1,19 @@
 public class Event extends Task{
     protected String description;
-    protected String time1;
-    protected String time2;
-    public Event(String description, String time1, String time2){
+    protected String startTime;
+    protected String endTime;
+    public Event(String description, String startTime, String endTime){
         super(description);
-        this.time1 = time1;
-        this.time2 = time2;
+        this.startTime = startTime;
+        this.endTime = endTime;
     }
     @Override
     public String toString(){
-        return "[E]" + super.toString() + " (from: " + time1 + " to: " + time2 + ")";
+        return "[E]" + super.toString() + " (from: " + startTime + " to: " + endTime + ")";
     }
     @Override
     public String toDataString() {
-        // Format: E | 1/0 | description | time1 | time2
-        return "E | " + (isDone ? "1" : "0") + " | " + this.description + " | " + this.time1 + " | " + this.time2;
+        // Format: E | 1/0 | description | startTime| endTime
+        return "E | " + (isDone ? "1" : "0") + " | " + this.description + " | " + this.startTime + " | " + this.endTime;
     }
 }

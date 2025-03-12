@@ -1,8 +1,18 @@
 import java.util.ArrayList;
 
+/**
+ *Identify key command words such as "bye", "list", "find", "mark", "unmark", "delete", "todo", "deadline" and "event".
+ */
 public class Parser {
 
-
+    /**
+     *
+     * @param input
+     * @param taskList
+     * @param storage
+     * @param ui
+     * @return true to exit program. If return false, while loop in Rick class will keep running parse method.
+     */
     public static boolean parse(String input, TaskList taskList, Storage storage, Ui ui) {
         String trimmedInput = input.trim();
 

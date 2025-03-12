@@ -2,6 +2,9 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Stores task elements in hard drive
+ */
 public class Storage {
     private File dataFolder;
     private File dataFile;
