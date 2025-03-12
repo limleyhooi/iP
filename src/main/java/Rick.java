@@ -1,3 +1,9 @@
+/**
+ * The main entry point of the application.
+ */
+
+
+
 public class Rick {
     public static void main(String[] args) {
         Ui ui = new Ui();

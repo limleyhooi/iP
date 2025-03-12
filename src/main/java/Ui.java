@@ -1,8 +1,14 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-
+/**
+ * Handles user interactions by displaying messages and reading user input.
+ * The Ui class is responsible for printing the welcome message, task updates,
+ * and errors. It also reads commands entered by the user.
+ */
 public class Ui {
+
     private static final String DIVIDER = "    ____________________________________________________________";
+
     private Scanner scanner;
 
     public Ui() {
@@ -22,7 +28,7 @@ public class Ui {
     }
 
     public void showGoodbye() {
-        System.out.println("bye bye! Hope to see you soon (づ￣ ³￣)づ");
+        System.out.println("bye bye! Hope to see you soon (❁´◡`❁)");
         showDivider();
     }
 
@@ -65,7 +71,7 @@ public class Ui {
     }
 
     public void showTaskDeleted() {
-        System.out.println("okie deleted!");
+        System.out.println("okie deleted! (｀･ω･´)");
         showDivider();
     }
 
@@ -84,9 +90,9 @@ public class Ui {
     }
     public void showFoundTasks(ArrayList<Task> tasks) {
         if (tasks.isEmpty()) {
-            System.out.println("No matching tasks found.");
+            System.out.println("No matching tasks found. (╥_╥)");
         } else {
-            System.out.println("Here are the matching tasks in your list:");
+            System.out.println("Here are the matching tasks in your list (ง'̀-'́)ง :");
             int index = 1;
             for (Task task : tasks) {
                 System.out.println(index + ". " + task);

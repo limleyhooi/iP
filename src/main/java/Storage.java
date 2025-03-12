@@ -9,11 +9,14 @@ public class Storage {
     private File dataFolder;
     private File dataFile;
 
-    // Constructor: sets up the folder and file
+    /**
+     * The constructor creates a folder named "data" in the current directory and a file named "Rick.txt" within that folder.
+     * If the folder or file does not exist, they are automatically created.
+     */
     public Storage() {
         // Relative path: "./data/duke.txt"
         dataFolder = new File("data");           // folder named 'data'
-        dataFile = new File(dataFolder, "Rick.txt"); // file named 'duke.txt' in that folder
+        dataFile = new File(dataFolder, "Rick.txt"); // file named 'Rick.txt' in that folder
 
         // Create the folder if it doesn't exist
         if (!dataFolder.exists()) {
@@ -42,7 +45,7 @@ public class Storage {
                 for (int i = 0; i < parts.length; i++) {
                     parts[i] = parts[i].trim();
                 }
-                // parts[0] = T/D/E, parts[1] = 1/0, the rest are description/time fields
+                // parts[0] = T/D/E, parts[1] = 1/0, the rest are description/time
                 switch (parts[0]) {
                     case "T":
                         Todo todo = new Todo(parts[2]);

@@ -1,3 +1,10 @@
+
+/**
+ * The Task class provides basic functionalities for handling a task's description,
+ * marking it as done or undone, and generating string representations of the task.
+ */
+
+
 public class Task {
     protected String description;
     protected boolean isDone;

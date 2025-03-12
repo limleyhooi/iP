@@ -25,7 +25,7 @@ public class Parser {
         else if (trimmedInput.startsWith("find")) { // NEW: find command
             String keyword = trimmedInput.substring(4).trim();
             if (keyword.isEmpty()) {
-                ui.showError("The search keyword cannot be empty.");
+                ui.showError("The search keyword cannot be empty. (✖╭╮✖)\n");
             } else {
                 // Use TaskList's findTasks method to search for tasks containing the keyword
                 ArrayList<Task> foundTasks = taskList.findTasks(keyword);
@@ -41,7 +41,7 @@ public class Parser {
                 ui.showTaskDone(task);
                 storage.saveTasks(taskList.getTasks());
             } catch (NumberFormatException | IndexOutOfBoundsException e) {
-                ui.showError("Invalid task number for marking!");
+                ui.showError("Invalid task number for marking! (✖ _ ✖)\n");
             }
         } else if (trimmedInput.startsWith("unmark")) {
             try {
@@ -52,7 +52,7 @@ public class Parser {
                 ui.showTaskUndone(task);
                 storage.saveTasks(taskList.getTasks());
             } catch (NumberFormatException |  IndexOutOfBoundsException e) {
-                ui.showError("Invalid task number for unmarking!");
+                ui.showError("Invalid task number for unmarking! (´･_･`)");
             }
         } else if (trimmedInput.startsWith("delete")) {
             try {
@@ -62,12 +62,12 @@ public class Parser {
                 ui.showTaskDeleted();
                 storage.saveTasks(taskList.getTasks());
             } catch (NumberFormatException | IndexOutOfBoundsException e) {
-                ui.showError("Invalid task number for deletion!");
+                ui.showError("Invalid task number for deletion! (´;︵;`)");
             }
         } else if (trimmedInput.startsWith("todo")) {
             String description = trimmedInput.substring(4).trim();
             if (description.isEmpty()) {
-                ui.showError("The description of a todo cannot be empty.");
+                ui.showError("The description of a todo cannot be empty. (｡•́︿•̀｡)");
             } else {
                 Task task = new Todo(description);
                 taskList.addTask(task);
@@ -104,7 +104,7 @@ public class Parser {
                 storage.saveTasks(taskList.getTasks());
             }
         } else {
-            ui.showError("I'm sorry, but I don't know what that means.");
+            ui.showError("I'm sorry, but I don't know what that means. (・・)？");
         }
         return false;
     }

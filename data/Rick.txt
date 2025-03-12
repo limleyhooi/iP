@@ -1,5 +1,4 @@
-T | 0 | palle
 E | 0 | null | frj | nn
-T | 0 | appe
-D | 0 | null | jn
-T | 0 | nrfkr
+T | 1 | appe
+T | 1 | nrfkr
+T | 0 | fjfnr
