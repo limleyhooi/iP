@@ -95,6 +95,4 @@ what it does: Adds a task with start time and end time
 
 
 
-## Feature XYZ
 
-// Feature details
