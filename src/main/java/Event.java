@@ -1,5 +1,5 @@
 public class Event extends Task{
-    protected String description;
+
     protected String startTime;
     protected String endTime;
     public Event(String description, String startTime, String endTime){

@@ -11,7 +11,7 @@ Rick is an expressive and friendly chatbot that helps you manage your tasks. Wit
 
 After starting, Rick will display a welcome message. Yay! you can start interacting with Rick by typing in your command and press enter.
 
-# Avaiable Commands 
+# Available Commands 
 
 ## 1. Existing Rick
 

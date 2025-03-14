@@ -2,3 +2,6 @@ T | 0 | math
 T | 0 | science hw
 D | 0 | null | friday
 E | 0 | null | 10:00 | 11:00
+D | 0 | null | today
+D | 0 | apple | today
+E | 0 | hw | today | tmr
