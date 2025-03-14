@@ -17,15 +17,16 @@ After starting, Rick will display a welcome message. Yay! you can start interact
 
 command: bye
 
-
 what it does: closes Rick.
-
 
 <img width="558" alt="image" src="https://github.com/user-attachments/assets/13dc2369-d537-4abc-a424-326a7bf084ff" />
 
 ## 2. Listing All Tasks
+
 command: list
+
 what it does: Shows all the tasks you have added.
+
 <img width="518" alt="image" src="https://github.com/user-attachments/assets/7346789e-9cbb-4d8e-8337-ee041441eb7a" />
 
 ## 3. Finding Task
