@@ -14,8 +14,13 @@ After starting, Rick will display a welcome message. Yay! you can start interact
 # Avaiable Commands 
 
 ## 1. Existing Rick
+
 command: bye
+
+
 what it does: closes Rick.
+
+
 <img width="558" alt="image" src="https://github.com/user-attachments/assets/13dc2369-d537-4abc-a424-326a7bf084ff" />
 
 ## 2. Listing All Tasks
