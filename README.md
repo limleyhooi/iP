@@ -21,7 +21,7 @@ Prerequisites: JDK 17, update Intellij to the most recent version.
    | |_) | |/ __| |/ /
    |  _ <| | (__|   <
    |_| \_\_|\___|_|\_\
-   Hello, I'm rick (´｡• ᵕ •｡`)
+   Hello, I'm Rick (´｡• ᵕ •｡`)
    What can I do for you?
    ```
 
