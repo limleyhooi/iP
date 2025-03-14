@@ -1,4 +1,4 @@
-E | 0 | null | frj | nn
-T | 1 | appe
-T | 1 | nrfkr
-T | 0 | fjfnr
+T | 0 | math
+T | 0 | science hw
+D | 0 | null | friday
+E | 0 | null | 10:00 | 11:00
